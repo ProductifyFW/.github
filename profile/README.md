@@ -4,13 +4,11 @@
 
 **[📚 Documentation](https://docs.productify.dev)** • **[🌐 Website](https://productify.dev)**
 
-::: info Private Repositories - Thesis Project
-These repositories are currently private as part of the thesis project "Building and adapting a software productization framework"
-:::
+> **ℹ️ Private Repositories - Thesis Project**  
+> These repositories are currently private as part of the thesis project "Building and adapting a software productization framework"
 
-::: warning Early Development
-Productify Framework is currently in early development stages. While functional, it may contain bugs and undergo breaking changes. Use with caution in production environments and ensure thorough testing for your specific use cases.
-:::
+> **⚠️ Early Development**  
+> Productify Framework is currently in early development stages. While functional, it may contain bugs and undergo breaking changes. Use with caution in production environments and ensure thorough testing for your specific use cases.
 
 ## 🚀 Core Components
 
