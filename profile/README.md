@@ -21,7 +21,7 @@
 
 ### Multi-Tenancy by Design
 
-Hierarchical Project → Tenant → Application structure with complete data isolation and flexible configuration layers.
+Hierarchical Project → Tenant → Application structure with complete data isolation and flexible configuration layers. Evolving toward **single deployment, multi-app, multi-tenant**: applications defined once and enabled per tenant, first-class environments, and one proxy instance serving every app and tenant (see Roadmap).
 
 ### Enterprise Service Bus (ESB)
 
@@ -29,7 +29,7 @@ Secure API gateway with Go template-based message transformation, configurable a
 
 ### Trigger System
 
-Cron-based scheduling with per-second granularity, backend HTTP callbacks, distributed execution with database-level locking and Prometheus metrics.
+Cron-based scheduling with backend HTTP callbacks, distributed execution with database-level locking and Prometheus metrics.
 
 ### Configuration Management
 
@@ -41,7 +41,7 @@ Pilet management with versioning, dynamic module discovery via feed service, and
 
 ## 🛠️ Technology Stack
 
-**Backend**: Go (Manager, CLI, Autoscaler) • **Frontend**: React + TypeScript • **Database**: PostgreSQL • **API**: GraphQL + REST • **Proxy**: Caddy • **Orchestration**: Nomad • **Metrics**: Prometheus • **SARIMAX** • **MILP**: Python
+**Backend**: Go (Manager, CLI, Autoscaler) • **Frontend**: Vue 3 + TypeScript (Manager UI), framework-agnostic integration libraries • **Database**: PostgreSQL • **API**: GraphQL + REST • **Proxy**: Caddy • **Orchestration**: Nomad • **Metrics**: Prometheus • **Autoscaling**: SARIMAX forecasting + MILP optimization (Python)
 
 ## 🤝 Use Cases
 
@@ -49,6 +49,18 @@ Pilet management with versioning, dynamic module discovery via feed service, and
 - **Enterprise Applications** - RBAC, audit logging, modular feature delivery
 - **API Gateways** - Secure external access with transformation and audit trails
 - **Multi-Brand Platforms** - Multiple brands with tenant-specific configurations
+
+## 🗺️ Roadmap (2026)
+
+Planned across the workspace (sequenced, security first):
+
+- **Security hardening release** — proxy header sanitization, proxy↔manager shared secret, signed tenant cookies with membership checks, PAT application scoping, resolver authorization fixes
+- **Single deployment, multi-app, multi-tenant** — applications decoupled from tenants (defined once, enabled per tenant), tenants as customer organizations, first-class environments, Manager-rendered proxy config pushed via Caddy's admin API
+- **Official Go server library** — `net/http` core + Gin adapter in be-integrations, protocol parity with the Node SDK, `managertest` test fake
+- **Self-service & roles** — configurable tenant roles over a fixed permission vocabulary, delegated tenant administration, invitation flow, opt-in role/permission forwarding to apps
+- **Developer experience** — `pfy dev` one-command local platform with idempotent seeding, official dev shims and test fakes, identity-injecting dev proxy
+- **Generated deployments** — Nomad jobs, autoscaler policies, and the entire Caddyfile rendered from specs with drift detection; versioned self-hosted install bundle
+- **Later** — Kubernetes support, deep-learning autoscaling, micro-frontend (pilet) finalization, compliance/audit tooling
 
 ## 📜 License
 
@@ -58,4 +70,4 @@ MIT License (Manager, CLI, Autoscaler) • Apache 2.0 (Proxy/Caddy derivative)
 
 - **[Documentation](https://docs.productify.dev)** - Guides and API reference
 - **[Frontend Integrations](https://github.com/ProductifyFW/fe-integrations)** - Frontend libraries, components and Piral integration helpers
-- **[Backend Integrations](https://github.com/ProductifyFW/be-integrations)** - Node.js/Express middleware and library
+- **[Backend Integrations](https://github.com/ProductifyFW/be-integrations)** - Node.js/Express middleware and library; official Go library planned (see Roadmap)
